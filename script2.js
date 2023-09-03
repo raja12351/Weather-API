@@ -1,22 +1,6 @@
-/* <div class="details">
-        <h5>Location: Delhi</h5>
-        <h5>Wind Speed: 100kmph</h5>
-        <h5>Humidity : 10</h5>
-        <h5>Time Zone : GMT +5:30</h5>
-        <h5>Pressure: 10atm</h5>
-        <h5>Wind Direction : North West</h5>
-        <h5>UV Index : 500</h5>
-        <h5>Feels like: 30°</h5>
-    </div> */
-
-    // <div class="lon-lat" id="lon-lat">
-    //             <h4>Lat:12343.443</h4>
-    //             <h4>Long:12333.4333</h4>
-    //         </div>
-
     const apiKey = "48dff6e4d6cb13b4a30482b24d45c365";
     const baseUrl = "https://api.openweathermap.org/data/2.5";
-    // http://api.openweathermap.org/v3/uvi/{lat},{lon}/current.json?appid={your-api-key}
+    // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 
     const country = document.getElementById("top1");
     const detailContainer = document.getElementById("bottom");
@@ -31,7 +15,7 @@
     }
 
     async function fetchUVIndex(latitude,longitude){
-        const endPoint = `http://api.openweathermap.org/v3/uvi/${latitude},${longitude}/current.json?appid=${apiKey}`;
+        const endPoint = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${latitude}&lon=${longitude}`;
 
         try{
             const response = await fetch(endPoint, { mode: 'no-cors'});
@@ -92,11 +76,11 @@
         ele2.innerHTML = `
         <h5>Location: ${data.name}</h5>
         <h5>Wind Speed: ${data.wind.speed} kmph</h5>
-        <h5>Humidity : ${data.main.humidity}</h5>
-        <h5>Time Zone : GMT +5:30</h5>
-        <h5>Pressure: ${data.main.pressure} atm</h5>
+        <h5>Humidity : ${data.main.humidity} %</h5>
+        <h5>Time Zone : GMT + 5 : 30</h5>
+        <h5>Pressure: ${data.main.pressure} mbar</h5>
         <h5>Wind Direction : ${windDirection(data.wind.deg)}</h5>
-        <h5>UV Index : 500</h5>
+        <h5>UV Index : 1</h5>
         <h5>Feels like: ${Math.floor(toCelcius(data.main.feels_like))}°</h5>`;
 
         detailContainer.appendChild(ele2);
