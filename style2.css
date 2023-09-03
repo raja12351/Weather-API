@@ -8,6 +8,9 @@
 .container{
     overflow-y: auto;
 }
+*::-webkit-scrollbar{
+    display: none;
+}
 
 .top{
     background: #360369;
