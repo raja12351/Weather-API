@@ -1,19 +1,36 @@
     const apiKey = "48dff6e4d6cb13b4a30482b24d45c365";
     const baseUrl = "https://api.openweathermap.org/data/2.5";
-    // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-
+    
+    // extracting keys to append the values in html
     const country = document.getElementById("top1");
     const detailContainer = document.getElementById("bottom");
-    const map = document.getElementById("map");
+    const map = document.getElementById("maps");
 
+    // updating map according to lat and long
+    function iframeUpdate(latitude,longitude){
+        const ele = document.createElement("iframe");
+        ele.className = "map";
+
+        ele.src = `https://maps.google.com/maps?q=${latitude}, ${longitude}&z=15&output=embed`;
+        ele.width = 600;
+        ele.height = 370;
+        ele.frameBorder = 0;
+        ele.style.border = 0;
+
+        map.appendChild(ele);
+    }
+
+    // finding latitude and longitude automatically from your device location
     function getLocation(){
         navigator.geolocation.getCurrentPosition((success) => {
             let {latitude, longitude} = success.coords;
 
             fetchLocation(latitude,longitude);
+            iframeUpdate(latitude,longitude);
         });
     }
 
+    // finding UV index
     async function fetchUVIndex(latitude,longitude){
         const endPoint = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${latitude}&lon=${longitude}`;
 
@@ -27,6 +44,7 @@
         }
     }
 
+    // finding wind direction according to given wind direction
     function windDirection(degree){
         if(degree == 0){
             return "North";
@@ -54,11 +72,13 @@
         }
     }
 
+    // converting kelvin into celcius
     function toCelcius(temp){
         // console.log(temp-273.15);
         return temp - 273.15;
     }
 
+    //  setting lat and long in top section
     function renderIntopUI(data){
         const ele1 = document.createElement("div");
         ele1.className = "lon-lat";
@@ -69,6 +89,8 @@
 
         country.appendChild(ele1);
     }
+
+    // setting weather report in bottom section
     function renderInBottomUI(data){
         const ele2 = document.createElement("div");
         ele2.className = "details";
@@ -86,6 +108,7 @@
         detailContainer.appendChild(ele2);
     }
 
+    //  finding exact location from lat and long found with the help of getLocation function
     async function fetchLocation(latitude,longitude){
         const endPoint = `${baseUrl}/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 
