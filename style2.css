@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Mada&family=Montserrat&family=Roboto&family=Rubik&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Montserrat;
+}
+.container{
+    overflow-y: auto;
+}
+
+.top{
+    background: #360369;
+    color: white;
+    height: 80vh;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.lon-lat{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+h1{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 45px;
+    font-weight: 700;
+}
+p{
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 26px;
+    font-weight: 300;
+}
+h4{
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 700;
+    background-color: rgb(39,08,70);
+    padding: 2px 20px;
+    border-radius: 5px;
+}
+.bottom{
+    color: #360369;
+    line-height: 40px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.details{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+h5{
+    border-radius: 10px;
+    border: 2px solid #360369;
+    background: #360369;
+    color: white;
+    margin: 10px 20px;
+    padding: 0px 10px;
+    font-size: 22px;
+    font-weight: 700;
+}
+h3{
+    color: #360369;
+    font-family: Montserrat;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
