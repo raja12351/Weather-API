@@ -28,13 +28,13 @@
 h1{
     color: #FFF;
     font-family: Montserrat;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
 }
 p{
     color: #FFF;
     font-family: Montserrat;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 h4{
@@ -67,15 +67,15 @@ h5{
     font-size: 1.2rem;
     font-weight: 700;
 }
-h3{
+h2{
     color: #360369;
     font-family: Montserrat;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 900;
     margin-bottom: 20px;
 }
 .map{
-    margin-left: 30vw; 
+    margin-left: 20vw; 
 }
 
 @media screen and (max-width: 800px){
@@ -84,7 +84,7 @@ h3{
         flex-direction: column;
     }
     .map{
-        width: 300px;
+        width: 600px;
         height: 270px;
     }
     .details{
@@ -99,8 +99,22 @@ h3{
         flex-direction: column;
     }
     .map{
-        width: 200px;
+        width: 400px;
         height: 150px;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+@media screen and (max-width: 359px) {
+    .lon-lat{
+        display: flex;
+        flex-direction: column;
+    }
+    .map{
+        width: 200px;
+        height: 100px;
     }
     .details{
         display: grid;

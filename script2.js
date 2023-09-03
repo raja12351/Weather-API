@@ -12,7 +12,7 @@
         ele.className = "map";
 
         ele.src = `https://maps.google.com/maps?q=${latitude}, ${longitude}&z=15&output=embed`;
-        ele.width = 600;
+        ele.width = 900;
         ele.height = 370;
         ele.frameBorder = 0;
         ele.style.border = 0;
