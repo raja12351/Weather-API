@@ -28,20 +28,20 @@
 h1{
     color: #FFF;
     font-family: Montserrat;
-    font-size: 45px;
+    font-size: 3rem;
     font-weight: 700;
 }
 p{
     color: #FFF;
     font-family: Montserrat;
-    font-size: 26px;
+    font-size: 2rem;
     font-weight: 300;
 }
 h4{
     color: #FFF;
     text-align: center;
     font-family: Montserrat;
-    font-size: 22px;
+    font-size: 1.2rem;
     font-weight: 700;
     background-color: rgb(39,08,70);
     padding: 2px 20px;
@@ -64,16 +64,46 @@ h5{
     color: white;
     margin: 10px 20px;
     padding: 0px 10px;
-    font-size: 22px;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 h3{
     color: #360369;
     font-family: Montserrat;
-    font-size: 45px;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
 .map{
     margin-left: 30vw; 
+}
+
+@media screen and (max-width: 800px){
+    .lon-lat{
+        display: flex;
+        flex-direction: column;
+    }
+    .map{
+        width: 300px;
+        height: 270px;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .lon-lat{
+        display: flex;
+        flex-direction: column;
+    }
+    .map{
+        width: 200px;
+        height: 150px;
+    }
+    .details{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
 }
