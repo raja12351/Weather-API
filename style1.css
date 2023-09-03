@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Mada&family=Montserrat&family=Roboto&family=Rubik&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    background: #360369;
+    color: white;
+}
+h1{
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 100px;
+    font-weight: 700;
+    margin-top: 30vh;
+}
+button{
+    text-align: center;
+    margin-top: 5vh;
+    margin-left: 34%;
+    transition: all 0.5s;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    background-color: white;
+    padding: 8px 200px;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 300;
+}
+button:hover{
+    scale: 1.01;
+}
