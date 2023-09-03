@@ -100,7 +100,7 @@ h2{
     }
     .map{
         width: 400px;
-        height: 150px;
+        height: 200px;
     }
     .details{
         display: grid;
@@ -111,10 +111,12 @@ h2{
     .lon-lat{
         display: flex;
         flex-direction: column;
+        margin-bottom: 15px;
     }
     .map{
         width: 200px;
         height: 100px;
+        margin-left: 4vw;
     }
     .details{
         display: grid;
