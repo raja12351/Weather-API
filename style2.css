@@ -101,6 +101,7 @@ h2{
     .map{
         width: 400px;
         height: 200px;
+        margin-left: 2vw;
     }
     .details{
         display: grid;
@@ -116,7 +117,7 @@ h2{
     .map{
         width: 200px;
         height: 100px;
-        margin-left: 4vw;
+        margin-left: 2vw;
     }
     .details{
         display: grid;
